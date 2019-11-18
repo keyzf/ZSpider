@@ -72,6 +72,7 @@
     "puppeteer-core": "^1.17.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.5",
+    "sqlite3": "^4.1.0",
     "vm2": "^3.8.4",
     "vue": "^2.5.16",
     "vue-electron": "^1.0.6",

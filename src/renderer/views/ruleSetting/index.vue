@@ -24,7 +24,7 @@
     <div class="setting-content">
       <landing-page v-show="step === 1"></landing-page>
       <details-page v-show="step === 2"></details-page>
-      <start-spider v-show="step === 3"></start-spider>
+      <start-spider :appId="id" v-show="step === 3"></start-spider>
       <data-publish v-if="step === 4"></data-publish>
     </div>
   </div>

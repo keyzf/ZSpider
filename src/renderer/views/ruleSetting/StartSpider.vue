@@ -62,12 +62,16 @@
   import EventBus from '@/utils/EventBus'
   const puppeteer = require('puppeteer-core')
   const { remote } = require('electron')
-
   let browser = null
   let page = null
-
   export default {
     name: 'StartSpider',
+    props: {
+      appId: {
+        type: [String, Number],
+        default: ''
+      }
+    },
     data () {
       return {
         isStart: false,
@@ -215,6 +219,7 @@
               v.value = house[v.name]
             })
             this.writeLog(`${JSON.stringify(house)}`)
+            // setData(this.appId, house)
             this.resultTable.push(house)
             if (this.resultTable.length > 50) {
               this.resultTable.shift()
