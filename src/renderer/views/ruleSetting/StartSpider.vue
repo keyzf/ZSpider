@@ -56,6 +56,8 @@
   import EventBus from '@/utils/EventBus'
   import { getConfig } from '@/service/rule.service'
   import { clearData, addData } from '@/service/data.service'
+  import { createDataTable } from '@/service/data'
+
   const puppeteer = require('puppeteer-core')
   const { remote } = require('electron')
   let browser = null
@@ -83,6 +85,9 @@
       chromePath: state => state.chromePath
     }),
     mounted () {
+      if (this.appId) {
+        createDataTable(this.appId)
+      }
       this.getConfig()
     },
     methods: {
